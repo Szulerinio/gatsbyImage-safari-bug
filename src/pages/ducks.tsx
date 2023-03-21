@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
             height: duck.original!.height!,
           }}
           image={duck.gatsbyImageData}
-          alt=""
+          alt="broken"
         ></GatsbyImage>
       </div>
     );
