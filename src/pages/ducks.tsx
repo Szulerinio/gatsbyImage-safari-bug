@@ -17,9 +17,11 @@ const IndexPage: React.FC<PageProps> = () => {
     return <GatsbyImage image={duck.gatsbyImageData} alt=""></GatsbyImage>;
   });
   return (
-    <div>
-      <Link to="/ducks">DUCKS!</Link>
-      {DucksImages}
+    <div style={{ overflow: "scroll" }}>
+      <div style={{ width: "5000px", display: "flex" }}>
+        <Link to="/">DUCKS!</Link>
+        {DucksImages}
+      </div>
     </div>
   );
 };
