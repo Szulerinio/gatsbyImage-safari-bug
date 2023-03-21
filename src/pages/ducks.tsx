@@ -7,7 +7,7 @@ const IndexPage: React.FC<PageProps> = () => {
     query Ducks {
       allImageSharp {
         nodes {
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
       }
     }
