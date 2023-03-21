@@ -8,17 +8,32 @@ const IndexPage: React.FC<PageProps> = () => {
       allImageSharp {
         nodes {
           gatsbyImageData(quality: 100)
+          original {
+            height
+            width
+          }
         }
       }
     }
   `);
 
   const DucksImages = data.allImageSharp.nodes.map((duck) => {
-    return <GatsbyImage image={duck.gatsbyImageData} alt=""></GatsbyImage>;
+    return (
+      <div>
+        <GatsbyImage
+          style={{
+            width: duck.original!.width!,
+            height: duck.original!.height!,
+          }}
+          image={duck.gatsbyImageData}
+          alt=""
+        ></GatsbyImage>
+      </div>
+    );
   });
   return (
     <div style={{ overflow: "scroll" }}>
-      <div style={{ width: "5000px", display: "flex" }}>
+      <div style={{ display: "flex", flexWrap: "nowrap" }}>
         <Link to="/">DUCKS!</Link>
         {DucksImages}
       </div>
